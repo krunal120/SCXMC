@@ -43,7 +43,10 @@ export const Default = (props: TitleDescriptionCarouselProps): JSX.Element => {
     <span className="is-empty-hint">Description is empty</span>
   );
   console.log('props', props);
-  const images = props.fields?.Carousel || [];
+
+  // Access the actual array from the Field object
+  const images = props.fields?.Carousel?.value || [];
+
   return (
     <div className="component title-description-carousel" id={props.params.RenderingIdentifier}>
       {route && <Placeholder name="my-custom-components" rendering={route} />}
