@@ -130,13 +130,6 @@ const NavigationList = (props: NavigationProps) => {
   const classNameList = `${props.fields.Styles.concat('rel-level' + props.relativeLevel).join(
     ' '
   )}`;
-  console.log(
-    'Navigation Props:',
-    Array.isArray(sitecoreContext?.route?.fields?.NavigationFilter) &&
-      sitecoreContext.route.fields.NavigationFilter.some(
-        (item: { displayName?: string }) => item.displayName === 'Main Navigation'
-      )
-  );
   let children: JSX.Element[] = [];
   if (props.fields.Children && props.fields.Children.length) {
     children = props.fields.Children.map((element: Fields, index: number) => (
