@@ -7,4 +7,9 @@
     "@sitecore-jss/sitecore-jss-cli": "^22.2.1",
     "@types/react": "^18.3.3"
   }
+  {
+    "scripts": {
+      "lint": "eslint ."
+    }
+  }
 }
