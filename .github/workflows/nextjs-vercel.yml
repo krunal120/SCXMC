@@ -38,7 +38,7 @@ jobs:
     - name: Build Next.js App
       run: |
         cd src/sxastarter
-        npm run build
+        npm run build || { echo "Build failed"; exit 1; }
 
   deploy:
     name: Deploy to Vercel
