@@ -17,6 +17,8 @@ jobs:
     steps:
     - name: Checkout Code
       uses: actions/checkout@v3
+      with:
+        ref: krunal-scxmc-practice # 👈 Ensures correct branch is checked out
 
     - name: Setup Node.js
       uses: actions/setup-node@v3
@@ -25,17 +27,17 @@ jobs:
 
     - name: Install Dependencies
       run: |
-        cd SCXMC/src
+        cd src
         npm ci
 
     - name: Run Linter
       run: |
-        cd SCXMC/src
+        cd src
         npm run lint
 
     - name: Build Next.js App
       run: |
-        cd SCXMC/src
+        cd src
         npm run build
 
   deploy:
@@ -49,6 +51,8 @@ jobs:
     steps:
     - name: Checkout Code
       uses: actions/checkout@v3
+      with:
+        ref: krunal-scxmc-practice # 👈 Ensures correct branch is checked out
 
     - name: Setup Node.js
       uses: actions/setup-node@v3
@@ -60,10 +64,10 @@ jobs:
 
     - name: Pull Vercel Environment Information
       run: |
-        cd SCXMC/src
+        cd src
         vercel pull --yes --environment=production --token ${{ secrets.VERCEL_TOKEN }}
 
     - name: Deploy to Vercel
       run: |
-        cd SCXMC/src
+        cd src
         vercel --prod --token ${{ secrets.VERCEL_TOKEN }}
