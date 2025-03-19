@@ -27,17 +27,17 @@ jobs:
 
     - name: Install Dependencies
       run: |
-        cd src
+        cd src/sxastarter
         npm ci
 
     - name: Run Linter
       run: |
-        cd src
+        cd src/sxastarter
         npm run lint
 
     - name: Build Next.js App
       run: |
-        cd src
+        cd src/sxastarter
         npm run build
 
   deploy:
@@ -64,10 +64,10 @@ jobs:
 
     - name: Pull Vercel Environment Information
       run: |
-        cd src
+        cd src/sxastarter
         vercel pull --yes --environment=production --token ${{ secrets.VERCEL_TOKEN }}
 
     - name: Deploy to Vercel
       run: |
-        cd src
+        cd src/sxastarter
         vercel --prod --token ${{ secrets.VERCEL_TOKEN }}
