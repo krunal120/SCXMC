@@ -31,11 +31,11 @@ class ComponentPropsPlugin implements Plugin {
       });
     }
 
-    const errors = Object.keys(props.componentProps)
+    const errors = Object.keys(props.componentProps || {})
       .map((id) => {
-        const component = props.componentProps[id] as ComponentPropsError;
+        const component = props.componentProps?.[id] as ComponentPropsError;
 
-        return component.error
+        return component?.error
           ? `\nUnable to get component props for ${component.componentName} (${id}): ${component.error}`
           : '';
       })
