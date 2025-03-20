@@ -3,11 +3,11 @@ name: CI/CD for Next.js XM Cloud with Vercel
 on:
   push:
     branches:
-      - '**' # 👈 Triggers on push to ANY branch
+      - '**'
   pull_request:
     branches:
-      - '**' # 👈 Triggers on PR to ANY branch
-  workflow_dispatch: # 👈 Enables manual trigger
+      - '**'
+  workflow_dispatch:
 
 jobs:
   build:
@@ -18,7 +18,7 @@ jobs:
     - name: Checkout Code
       uses: actions/checkout@v3
       with:
-        ref: krunal-scxmc-practice # 👈 Ensures correct branch is checked out
+        ref: krunal-scxmc-practice
 
     - name: Setup Node.js
       uses: actions/setup-node@v3
@@ -52,7 +52,7 @@ jobs:
     - name: Checkout Code
       uses: actions/checkout@v3
       with:
-        ref: krunal-scxmc-practice # 👈 Ensures correct branch is checked out
+        ref: krunal-scxmc-practice
 
     - name: Setup Node.js
       uses: actions/setup-node@v3
@@ -67,7 +67,7 @@ jobs:
         cd src/sxastarter
         vercel pull --yes --environment=production --token ${{ secrets.VERCEL_TOKEN }}
 
-    - name: Deploy to Vercel
+    - name: Deploy to Vercel (Production)
       run: |
         cd src/sxastarter
         vercel --prod --token ${{ secrets.VERCEL_TOKEN }}
