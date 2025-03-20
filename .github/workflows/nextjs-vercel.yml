@@ -65,6 +65,5 @@ jobs:
 
       - name: Deploy to Vercel
         run: |
-          cd src/sxastarter
           vercel --prod --token ${{ secrets.VERCEL_TOKEN }} --confirm --yes
 
