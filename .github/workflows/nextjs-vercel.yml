@@ -70,4 +70,4 @@ jobs:
     - name: Deploy to Vercel (Production)
       run: |
         cd src/sxastarter
-        vercel --prod --token ${{ secrets.VERCEL_TOKEN }}
+        vercel --token ${{ secrets.VERCEL_TOKEN }}
