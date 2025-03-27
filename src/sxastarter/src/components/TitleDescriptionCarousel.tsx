@@ -12,7 +12,7 @@ import { GraphQLRequestClient } from '@sitecore-jss/sitecore-jss-nextjs/graphql'
 import { GET_USER_QUERY } from 'src/GraphQLQueries/MyQuery';
 
 const endpoint =
-  'http://xmc-sourceved15434-jsitecorexmc413-dev0494.sitecorecloud.io/sitecore/api/graph/edge';
+  'https://xmc-sourceved15434-jsitecorexmc413-dev0494.sitecorecloud.io/sitecore/api/graph/edge';
 const apiKey = '{B12D98C5-FB7B-48AE-8BF9-EBF7B0546DC9}';
 
 const client = new GraphQLRequestClient(endpoint, {
