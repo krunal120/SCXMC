@@ -1,6 +1,4 @@
-import { gql } from '@apollo/client';
-
-export const GET_USER_QUERY = gql`
+export const GET_USER_QUERY = `
   query GetData($datasource: String!) {
     item(path: $datasource, language: "en") {
       id
