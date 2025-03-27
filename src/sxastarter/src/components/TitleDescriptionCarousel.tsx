@@ -30,6 +30,7 @@ const fetchGraphQL = async (query: string, variables = {}) => {
 };
 
 interface Fields {
+  id: unknown;
   data: unknown;
   title: Field<string>;
   description: Field<string>;
@@ -51,7 +52,9 @@ interface TitleDescriptionCarouselProps {
 }
 
 export const Default = (props: TitleDescriptionCarouselProps): JSX.Element => {
-  fetchGraphQL(GET_USER_QUERY, { datasource: props.params.datasource }).then((data) => {
+  const data = props.fields.data as { item: Fields };
+  const item = data.item;
+  fetchGraphQL(GET_USER_QUERY, { datasource: item.id }).then((data) => {
     console.log('GraphQL Data:', data);
   });
   const { sitecoreContext } = useSitecoreContext();
@@ -59,8 +62,6 @@ export const Default = (props: TitleDescriptionCarouselProps): JSX.Element => {
   const route = sitecoreContext.route;
   console.log('route', route);
   console.log('new props', props);
-  const data = props.fields.data as { item: Fields };
-  const item = data.item;
   const title = item.title ? (
     <h2>{item.title.value}</h2>
   ) : (
