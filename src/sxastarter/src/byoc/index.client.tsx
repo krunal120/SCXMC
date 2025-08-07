@@ -6,7 +6,7 @@
  * DO NOT REMOVE
  */
 import * as FEAAS from "@sitecore-feaas/clientside/react";
-export default (props: any) => {
+export default (props: never) => {
   debugger;
   return FEAAS.ExternalComponent(props);
 };
