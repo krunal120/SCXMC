@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 /**
  * Set up and import BYOC component bundles
  *
