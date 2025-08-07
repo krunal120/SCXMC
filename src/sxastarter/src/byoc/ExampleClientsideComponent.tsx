@@ -8,7 +8,6 @@ export default function ExampleClientsideComponent(props: {
   lastName?: string;
   telephone?: string;
   bold?: boolean;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   children?: any;
 }) {
   const [counter, setCounter] = useState(0);
