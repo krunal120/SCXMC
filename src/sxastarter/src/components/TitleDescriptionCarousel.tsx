@@ -68,10 +68,14 @@ export const Default = (props: TitleDescriptionCarouselProps): JSX.Element => {
   );
   const description = item.description ? (
     <JssRichText field={item.description} tag="section" editable={true} />
+  const description = item.description ? (
+    <JssRichText field={item.description} tag="section" editable={true} />
   ) : (
     <span className="is-empty-hint">Description is empty</span>
   );
   console.log('props', props);
+  const images = item.imageCarousel.jsonValue || [];
+  console.log('images', images);
   const images = item.imageCarousel.jsonValue || [];
   console.log('images', images);
   return (
